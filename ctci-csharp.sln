@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linked-Lists", "src\Linked-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stacks-Queues", "src\Stacks-Queues\Stacks-Queues.csproj", "{9BB2EEAE-2BB4-4138-A1CC-F38414911242}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCA6EA73-9AC5-48BB-997E-69DD1DF77044}"
+	ProjectSection(SolutionItems) = preProject
+		src\Trees-Graphs\Trees-Graphs.csproj = src\Trees-Graphs\Trees-Graphs.csproj
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
