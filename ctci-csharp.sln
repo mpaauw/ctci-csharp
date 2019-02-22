@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays-Strings", "src\Array
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linked-Lists", "src\Linked-Lists\Linked-Lists.csproj", "{19048218-07AF-43E2-9946-39E8DC539660}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stacks-Queues", "src\Stacks-Queues\Stacks-Queues.csproj", "{9BB2EEAE-2BB4-4138-A1CC-F38414911242}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{19048218-07AF-43E2-9946-39E8DC539660}.Release|x64.Build.0 = Release|Any CPU
 		{19048218-07AF-43E2-9946-39E8DC539660}.Release|x86.ActiveCfg = Release|Any CPU
 		{19048218-07AF-43E2-9946-39E8DC539660}.Release|x86.Build.0 = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|x64.Build.0 = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Debug|x86.Build.0 = Debug|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|x64.ActiveCfg = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|x64.Build.0 = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|x86.ActiveCfg = Release|Any CPU
+		{9BB2EEAE-2BB4-4138-A1CC-F38414911242}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
