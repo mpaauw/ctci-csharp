@@ -4,18 +4,18 @@ using System.Text;
 
 namespace Stacks_Queues
 {
-    public class ThreeInOne
+    public class ThreeInOne<T>
     {
         private const int NumStacks = 3;
 
-        private readonly int[] stackArray;
+        private readonly T[] stackArray;
         private StackInfo stack1;
         private StackInfo stack2;
         private StackInfo stack3;
 
         public ThreeInOne(int arraySize = 128)
         {
-            this.stackArray = new int[arraySize];
+            this.stackArray = new T[arraySize];
             int stackSize = this.stackArray.Length / 3;
             this.stack1 = new StackInfo
             {
@@ -40,7 +40,7 @@ namespace Stacks_Queues
             };
         }
 
-        public void Push(int stackNumber, int data)
+        public void Push(int stackNumber, T data)
         {
             var stack = SelectStack(stackNumber);
             if(stack.Top == stack.UpperBound)
@@ -52,21 +52,21 @@ namespace Stacks_Queues
             WriteStack(stack);
         }
 
-        public int Pop(int stackNumber)
+        public T Pop(int stackNumber)
         {
             var stack = SelectStack(stackNumber);
             if(stack.Top < stack.LowerBound)
             {
                 throw new ArgumentException("Stack empty.");
             }
-            int result = this.stackArray[stack.Top];
-            this.stackArray[stack.Top] = 0;
+            T result = this.stackArray[stack.Top];
+            this.stackArray[stack.Top] = default(T);
             stack.Top -= 1;
             WriteStack(stack);
             return result;
         }
 
-        public int Peek(int stackNumber)
+        public T Peek(int stackNumber)
         {
             var stack = SelectStack(stackNumber);
             if(stack.Top < stack.LowerBound)

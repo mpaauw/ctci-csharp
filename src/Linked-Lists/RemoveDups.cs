@@ -7,11 +7,11 @@ namespace Linked_Lists
 {
     public class RemoveDups
     {
-        public SinglyLinkedListNode RemoveDupsFromSinglyLinkedListUsingHashSet(SinglyLinkedListNode head)
+        public SinglyLinkedListNode<T> RemoveDupsFromSinglyLinkedListUsingHashSet<T>(SinglyLinkedListNode<T> head)
         {
-            HashSet<string> existingData = new HashSet<string>();
-            SinglyLinkedListNode current = head;
-            SinglyLinkedListNode prev = null;
+            HashSet<T> existingData = new HashSet<T>();
+            SinglyLinkedListNode<T> current = head;
+            SinglyLinkedListNode<T> prev = null;
             while (current != null)
             {
                 if (existingData.Contains(current.Data))
@@ -28,16 +28,16 @@ namespace Linked_Lists
             return head;
         }
 
-        public SinglyLinkedListNode RemoveDupsFromSinglyLinkedListUsingNoBuffer(SinglyLinkedListNode head)
+        public SinglyLinkedListNode<T> RemoveDupsFromSinglyLinkedListUsingNoBuffer<T>(SinglyLinkedListNode<T> head)
         {
-            SinglyLinkedListNode current = head;
+            SinglyLinkedListNode<T> current = head;
             while (current != null)
             {
-                SinglyLinkedListNode runner = current.Next;
-                SinglyLinkedListNode prev = null;
+                SinglyLinkedListNode<T> runner = current.Next;
+                SinglyLinkedListNode<T> prev = null;
                 while (runner != null)
                 {
-                    if (runner.Data == current.Data)
+                    if (runner.Data.Equals(current.Data))
                     {
                         prev.Next = runner.Next;
                     }

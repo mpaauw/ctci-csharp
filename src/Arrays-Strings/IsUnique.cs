@@ -21,9 +21,9 @@ namespace Arrays_Strings
             return true;
         }
 
-        public bool DoesStringConsistOfUniqueCharacters(string input)
+        public bool DoesStringConsistOfUniqueCharactersUsingSort(string input)
         {
-            var arr = SortCharArray(input.ToCharArray());
+            var arr = SelectionSort(input.ToCharArray());
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 char current = arr[i], next = arr[i + 1];
@@ -35,7 +35,7 @@ namespace Arrays_Strings
             return true;
         }
 
-        private char[] SortCharArray(char[] arr)
+        private char[] SelectionSort(char[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {

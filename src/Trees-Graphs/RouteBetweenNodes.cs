@@ -7,24 +7,24 @@ namespace Trees_Graphs
 {
     public class RouteBetweenNodes
     {
-        public bool DoesRouteExistBetweenTwoNodes(GraphNode node1, GraphNode node2)
+        public bool DoesRouteExistBetweenTwoNodes<T>(GraphNode<T> node1, GraphNode<T> node2)
         {
-            Stack<GraphNode> stack = new Stack<GraphNode>();
+            Stack<GraphNode<T>> stack = new Stack<GraphNode<T>>();
             stack.Push(node1);
             return DepthFirstSearch(stack, node2);
         }
 
-        private bool DepthFirstSearch(Stack<GraphNode> stack, GraphNode searchNode)
+        private bool DepthFirstSearch<T>(Stack<GraphNode<T>> stack, GraphNode<T> searchNode)
         {
             while(stack.Count > 0)
             {
-                GraphNode currentNode = stack.Pop();
+                GraphNode<T> currentNode = stack.Pop();
                 if(currentNode.Equals(searchNode))
                 {
                     return true;
                 }
                 currentNode.Status = VisitStatus.Visiting;
-                foreach (GraphNode adjacentNode in currentNode.AdjacencyList)
+                foreach (GraphNode<T> adjacentNode in currentNode.AdjacencyList)
                 {
                     if(adjacentNode.Status == VisitStatus.Unvisited)
                     {
@@ -36,17 +36,17 @@ namespace Trees_Graphs
             return false;
         }
 
-        private bool BreadthFirstSearch(Queue<GraphNode> queue, GraphNode searchNode)
+        private bool BreadthFirstSearch<T>(Queue<GraphNode<T>> queue, GraphNode<T> searchNode)
         {
             while(queue.Count > 0)
             {
-                GraphNode currentNode = queue.Dequeue();
+                GraphNode<T> currentNode = queue.Dequeue();
                 if (currentNode.Equals(searchNode))
                 {
                     return true;
                 }
                 currentNode.Status = VisitStatus.Visiting;
-                foreach(GraphNode adjacentNode in currentNode.AdjacencyList)
+                foreach(GraphNode<T> adjacentNode in currentNode.AdjacencyList)
                 {
                     if(adjacentNode.Status == VisitStatus.Unvisited)
                     {

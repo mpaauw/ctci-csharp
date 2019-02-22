@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Linked_Lists.Common
 {
-    public class SinglyLinkedListNode
+    public class SinglyLinkedListNode<T>
     {
-        public string Data { get; set; }
+        public T Data { get; set; }
 
-        public SinglyLinkedListNode Next { get; set; }
+        public SinglyLinkedListNode<T> Next { get; set; }
     }
 }
