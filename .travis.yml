@@ -1,0 +1,5 @@
+notifications:
+  email: false
+
+language: csharp
+solution: ./ctci-csharp.sln
