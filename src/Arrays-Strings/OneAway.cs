@@ -6,9 +6,6 @@ namespace Arrays_Strings
 {
     public class OneAway
     {
-        Dictionary<char, int> s1Dict = new Dictionary<char, int>();
-        Dictionary<char, int> s2Dict = new Dictionary<char, int>();
-
         public bool AreStringsOneEditAway(string s1, string s2)
         {
             // quick length check:
@@ -32,7 +29,7 @@ namespace Arrays_Strings
                     {
                         return false;
                     }
-                    isDifferent = false;
+                    isDifferent = true;
                     if(shorter.Length == longer.Length)
                     {
                         shortIter++;

@@ -37,12 +37,12 @@ namespace Stacks_Queues
         /// <param name="value">Value to push onto the stack.</param>
         public void Push(T value)
         {
-            if(stacks[current].Count == this.threshold)
+            if(this.stacks[current].Count == this.threshold)
             {
-                stacks.Add(new Stack<T>());
-                this.current += 1;
+                this.stacks.Add(new Stack<T>());
+                this.current++;
             }
-            stacks[current].Push(value);
+            this.stacks[current].Push(value);
         }
         
         /// <summary>
@@ -52,12 +52,12 @@ namespace Stacks_Queues
         /// <param name="value">Value to push onto the stack.</param>
         public void PushAt(int index, T value)
         {
-            if(stacks[index].Count == this.threshold)
+            if(this.stacks[index].Count == this.threshold)
             {
-                stacks.Add(new Stack<T>());
+                this.stacks.Add(new Stack<T>());
                 index += 1;
             }
-            stacks[index].Push(value);
+            this.stacks[index].Push(value);
         }
 
         /// <summary>
@@ -67,16 +67,16 @@ namespace Stacks_Queues
         /// <returns>Value returned from the top of the current stack.</returns>
         public T Pop()
         {
-            if(stacks[current].Count == 0)
+            if(this.stacks[current].Count == 0)
             {
-                stacks.RemoveAt(current);
+                this.stacks.RemoveAt(current);
                 current -= 1;
                 if(current < 0)
                 {
                     throw new InvalidOperationException("All stacks empty.");
                 }
             }
-            return stacks[current].Pop();
+            return this.stacks[current].Pop();
         }
 
         /// <summary>
@@ -87,11 +87,11 @@ namespace Stacks_Queues
         /// <returns>Value returned from the top of the specified stack.</returns>
         public T PopAt(int index)
         {
-            if(stacks[index].Count == 0)
+            if(this.stacks[index].Count == 0)
             {
                 throw new InvalidOperationException($"Stack at index {index} is empty.");
             }
-            return stacks[index].Pop();
+            return this.stacks[index].Pop();
         }
 
         /// <summary>
@@ -100,16 +100,16 @@ namespace Stacks_Queues
         /// <returns>Value from the top of the current stack.</returns>
         public T Peek()
         {
-            if(stacks[current].Count == 0)
+            if(this.stacks[current].Count == 0)
             {
-                stacks.RemoveAt(current);
+                this.stacks.RemoveAt(current);
                 current -= 1;
                 if(current < 0)
                 {
                     throw new InvalidOperationException("All stacks empty.");
                 }
             }
-            return stacks[current].Peek();
+            return this.stacks[current].Peek();
         }
     }
 }

@@ -10,14 +10,14 @@ namespace Stacks_Queues
 
         public StackMin()
         {
-            minStack = new Stack<int>();
+           this.minStack = new Stack<int>();
         }
 
         public void Push(int data)
         {
             if(data <= Min())
             {
-                minStack.Push(data);
+                this.minStack.Push(data);
             }
             this.Push(data);
         }
@@ -27,7 +27,7 @@ namespace Stacks_Queues
             int poppedVal = this.Pop();
             if(poppedVal == this.minStack.Peek())
             {
-                minStack.Pop();
+                this.minStack.Pop();
             }
             return poppedVal;
         }
