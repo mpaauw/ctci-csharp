@@ -25,6 +25,7 @@ namespace Linked_Lists
                 {
                     WriteToList(current.Data, greaterThanEqualList);
                 }
+                current = current.Next;
             }
             lessThanList.Next = greaterPtr;
             return lessPtr;
