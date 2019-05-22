@@ -8,7 +8,7 @@ public class PathsWithSum
         {
             return 0;
         }
-        return Recurse(root, value, 0) + CountPaths(root.Left, value) + CountPaths(root, value);
+        return Recurse(root, value, 0) + CountPaths(root.Left, value) + CountPaths(root.Right, value);
     }
 
     private int Recurse(BinaryTreeNode<int> node, int value, int sum)

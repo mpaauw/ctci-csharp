@@ -4,58 +4,62 @@ using System.Text;
 
 namespace Stacks_Queues
 {
-    public class MyQueue<T>
+    public class TwoStacksQueue
     {
-        private Stack<T> inStack; // stack used primarily for Enqueue operations
+        private Stack<int> inStack;
+        private Stack<int> outStack;
 
-        private Stack<T> outStack; // stack used primarily for Dequeue operations
-
-        public MyQueue()
+        public TwoStacksQueue()
         {
-            this.inStack = new Stack<T>();
-            this.outStack = new Stack<T>();
+            this.inStack = new Stack<int>();
+            this.outStack = new Stack<int>();
         }
 
-        public void Enqueue(T value)
+        public void Push(int x)
         {
-            this.inStack.Push(value);
-        }
-
-        public T Dequeue()
-        {
-            MoveOut();
-
-            var result = this.outStack.Pop();
-
-            MoveIn();
-
-            return result;
-        }
-
-        public T Peek()
-        {
-            MoveOut();
-
-            var result = this.outStack.Peek();
-
-            MoveIn();
-
-            return result;
-        }
-
-        private void MoveIn()
-        {
-            while(this.outStack.Count > 0)
+            if (inStack.Count == 0 && outStack.Count > 0)
             {
-                this.inStack.Push(this.outStack.Pop());
+                Transfer(outStack, inStack);
             }
+            this.inStack.Push(x);
         }
 
-        private void MoveOut()
+        public int Pop()
         {
-            while(this.inStack.Count > 0)
+            if (Empty())
             {
-                this.outStack.Push(this.inStack.Pop());
+                throw new ArgumentException("Queue is empty!");
+            }
+            else if (outStack.Count == 0 && inStack.Count > 0)
+            {
+                Transfer(inStack, outStack);
+            }
+            return outStack.Pop();
+        }
+
+        public int Peek()
+        {
+            if (Empty())
+            {
+                throw new ArgumentException("Queue is empty!");
+            }
+            else if (outStack.Count == 0 && inStack.Count > 0)
+            {
+                Transfer(inStack, outStack);
+            }
+            return outStack.Peek();
+        }
+
+        public bool Empty()
+        {
+            return inStack.Count == 0 && outStack.Count == 0;
+        }
+
+        private void Transfer(Stack<int> source, Stack<int> destination)
+        {
+            while (source.Count > 0)
+            {
+                destination.Push(source.Pop());
             }
         }
     }

@@ -40,7 +40,7 @@ public class CheckSubtree
         }
         else
         {
-            return MatchTree(t1.Left, t2.Left) && MatchTree(t1.Left, t2.Left);
+            return MatchTree(t1.Left, t2.Left) && MatchTree(t1.Right, t2.Right);
         }
     }
 }

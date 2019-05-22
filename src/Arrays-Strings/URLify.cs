@@ -27,6 +27,7 @@ namespace Arrays_Strings
                 char current = inputArr[i];
                 if(current == ' ')
                 {
+                    // add space-placeholders to end of input string:
                     for(int j = 2; j >= 0; j--)
                     {
                         inputArr = ModifyInputArr(inputArr, Placeholder[j], tailIndex);
@@ -35,6 +36,7 @@ namespace Arrays_Strings
                 }
                 else
                 {
+                    // add current character to end of string:
                     inputArr = ModifyInputArr(inputArr, current, tailIndex);
                     tailIndex -= 1;
                 }
