@@ -21,7 +21,7 @@ namespace Linked_Lists
             while(num1 != null || num2 != null || carry > 0)
             {
                 int num1Current = (num1 != null) ? num1.Data : 0;
-                int num2Current = (num2 != null) ? num2.Data : 1;
+                int num2Current = (num2 != null) ? num2.Data : 0;
 
                 int currentSum = num1Current + num2Current + carry;
                 carry = currentSum / 10;
